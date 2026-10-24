@@ -34,6 +34,9 @@ go install github.com/Dem1241/slotwatch@latest
 slotwatch --demo
 ```
 
+or grab a binary for linux, macos or windows from the
+[releases](https://github.com/Dem1241/slotwatch/releases).
+
 `--demo` watches a pretend server with a debezium slot that stopped being
 read hours ago and keeps piling up WAL, next to a few healthy ones, so you
 can look around without a database.

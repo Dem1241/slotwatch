@@ -7,6 +7,7 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"runtime/debug"
 	"time"
 
 	tea "charm.land/bubbletea/v2"
@@ -48,7 +49,7 @@ func run() (int, error) {
 	}
 	flag.Parse()
 	if *showVersion {
-		fmt.Println("slotwatch", version)
+		fmt.Println("slotwatch", buildVersion())
 		return 0, nil
 	}
 	if flag.NArg() > 0 {
@@ -104,4 +105,16 @@ func runCheck(src ui.Source, limits slots.Limits, asJSON bool) (int, error) {
 		return check.ExitUnknown, err
 	}
 	return check.Code(sts), nil
+}
+
+// buildVersion falls back to the module version for go install builds, which
+// don't get the release ldflags.
+func buildVersion() string {
+	if version != "dev" {
+		return version
+	}
+	if info, ok := debug.ReadBuildInfo(); ok && info.Main.Version != "" && info.Main.Version != "(devel)" {
+		return info.Main.Version
+	}
+	return version
 }

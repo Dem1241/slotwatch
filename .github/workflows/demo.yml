@@ -1,0 +1,24 @@
+name: demo
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  record:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - run: go install .
+      - uses: charmbracelet/vhs-action@v2
+        with:
+          path: assets/demo.tape
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: record the demo gif
+          file_pattern: assets/demo.gif
