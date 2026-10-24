@@ -10,7 +10,7 @@ catch the one quietly filling your disk with WAL before it takes the database do
 [![PostgreSQL](https://img.shields.io/badge/postgres-14%20to%2018-313244?style=flat-square&logo=postgresql&logoColor=f5c2e7)](#what-it-understands)
 [![License](https://img.shields.io/badge/license-MIT-f5c2e7?style=flat-square)](LICENSE)
 
-<img src="assets/slots.png" alt="slotwatch showing five replication slots, with a debezium slot that nobody reads holding 6.7 GB of WAL, growing 43 MB a minute and about five hours away from max_slot_wal_keep_size" width="860">
+<img src="assets/demo.gif" alt="slotwatch running its demo, showing five replication slots, with a debezium slot that nobody reads holding 6.7 GB of WAL, growing 43 MB a minute and about five hours away from max_slot_wal_keep_size" width="860">
 
 </div>
 
