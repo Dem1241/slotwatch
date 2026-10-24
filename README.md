@@ -27,6 +27,10 @@ who is reading it and how long it has been idle. the worst ones go to the
 top, the detail pane says why a slot was flagged, and it suggests what to do
 about it. it only reads, so it never drops or changes anything for you.
 
+it goes well with [connectwatch](https://github.com/Dem1241/connectwatch), for
+the debezium connector that stopped reading the slot, and
+[puddle](https://github.com/Dem1241/puddle), for the change events it writes.
+
 ## try it
 
 ```sh
