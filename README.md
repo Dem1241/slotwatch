@@ -34,11 +34,12 @@ the debezium connector that stopped reading the slot, and
 ## try it
 
 ```sh
-go install github.com/Dem1241/slotwatch@latest
+brew install Dem1241/tap/slotwatch
 slotwatch --demo
 ```
 
-or grab a binary for linux, macos or windows from the
+or `go install github.com/Dem1241/slotwatch@latest`, or grab a binary for
+linux, macos or windows from the
 [releases](https://github.com/Dem1241/slotwatch/releases).
 
 `--demo` watches a pretend server with a debezium slot that stopped being
