@@ -17,6 +17,16 @@ archives:
       - LICENSE
       - README.md
 
+dockers_v2:
+  - images:
+      - ghcr.io/dem1241/slotwatch
+    tags:
+      - "{{ .Version }}"
+      - latest
+    platforms:
+      - linux/amd64
+      - linux/arm64
+
 checksum:
   name_template: checksums.txt
 
